@@ -2,12 +2,9 @@ body {
   font-family: system-ui, sans-serif;
   margin: 0;
   background-color: #f3f2ef;
-}
-
-/* TODO: Add sidebar styles */
-
-.main-content {
-  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .header {
@@ -17,15 +14,71 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .controls select {
   margin-left: 0.5rem;
 }
 
-.feed {
+.container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar {
+  position: relative;
+  width: 220px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 0.5rem;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #666;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-link:hover {
+  background-color: #f3f2ef;
+  color: #0a66c2;
+}
+
+.nav-link.active {
+  background-color: #0a66c2;
+  color: white;
+  font-weight: bold;
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
   padding: 1rem;
 }
+
+.feed {
+  padding: 0;
+}
+
 
 .post {
   background: white;
